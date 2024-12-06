@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Page</title>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800;900&display=swap");
+
+    * {
+      margin: 0px;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Barlow Semi Condensed", sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      float: left;
+      min-height: 100vh;
+      background: #151515;
+    }
+    .container {
+        width: 1920px
+    }
+    .add_button {
+      position: absolute;
+      left: 10%;
+      top: 7%;
+    }
+    /* From Uiverse.io by reshades */ 
+    .add_button .button {
+  background-color: #ffffff00;
+  color: #fff;
+  width: 8.5em;
+  height: 2.9em;
+  border: #3654ff 0.2em solid;
+  border-radius: 11px;
+  text-align: right;
+  transition: all 0.6s ease;
+}
+
+.add_button .button:hover {
+  background-color: #3654ff;
+  cursor: pointer;
+}
+
+.add_button .button svg {
+  width: 1.6em;
+  margin: -0.2em 0.8em 1em;
+  position: absolute;
+  display: flex;
+  transition: all 0.6s ease;
+}
+
+.add_button .button:hover svg {
+  transform: translateX(5px);
+}
+
+.add_button .text {
+  margin: 0 1.5em
+}
+    .row{
+        display: flex;
+        justify-content: center;
+    }
+.main-text{
+  position: absolute;
+  margin: 15px 0px;
+  font-size: 45px;
+  color: #FFFFFF;
+}
+.card-box{
+    position: absolute;
+    top: 150px;
+    left: 100px;
+}
+    .card {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      float: left;
+      justify-content: center;
+      align-items: center;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+    }
+    .card:hover {
+      width: 600px;
+      transition-delay: 0.5s;
+    }
+    .card .circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card .circle::before {
+      content: "";
+      position: absolute;
+      top: 30;
+      left: 2;
+      right: 2;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #191919;
+      border: 8px solid var(--clr);
+      filter: drop-shadow(0 0 10px var(--clr)) drop-shadow(0 0 60px var(--clr));
+      transition: 0.5s, background 0.5s;
+      transition-delay: 0.75s, 1s;
+      z-index: -1;
+    }
+    .card:hover .circle::before {
+      transition-delay: 0.5s;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      background: var(--clr);
+    }
+    .card .circle .text h4 {
+      position: relative;
+      transition: 0.5s;
+      transition-delay: 0.5s;
+    }
+    .card:hover .circle .text h4 {
+      transform: scale(0);
+      transition-delay: 0s;
+    }
+    .card .product_img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0) rotate(315deg);
+      height: 300px;
+      transition: 0.5s ease-in-out;
+    }
+    .card:hover .product_img {
+      transition-delay: 0.75s;
+      top: 50%;
+      left: 75%;
+      height: 230px;
+      transform: translate(-50%, -50%) scale(1) rotate(15deg);
+    }
+    .card .content {
+      position: absolute;
+      width: 60%;
+      height: 100%;
+      left: 10%;
+      padding: 20px 20px 20px 20px;
+      opacity: 0;
+      transition: 0.5s;
+      visibility: hidden;
+    }
+    .card:hover .content {
+      transition-delay: 0.75s;
+      opacity: 1;
+      visibility: visible;
+      left: 3px;
+    }
+    .card .content h2 {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 2em;
+      margin-bottom: 5px;
+      line-height: 1.3em;
+    }
+    .card .content p {
+        color: #fff;
+        width: 90%;
+        margin-bottom: 10px;
+        font-size: 18px;
+
+    }
+    .actionMini {
+  position: relative;
+  display: inline-block;
+  padding: 10px 25px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.actionMini::before {
+content: '';
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+.actionMini:hover::before {
+  transform: scaleY(0);
+}
+
+.actionMini::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+}
+
+.actionMini:hover::after {
+  transform: scaleX(0);
+}
+
+.actionMini span {
+  position: relative;
+  z-index: 3;
+}
+
+.action {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  background-color: none;
+  text-decoration: none;
+  background-color: #212121;
+  border: none;
+}
+  </style>
+
+  <body>
+    <div class="container">
+        <div class="row">
+            <h2 class="main-text">View Book</h2>
+            
+            <a href="/" class="add_button">
+              <button class="button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+                </svg>
+                <div class="text">
+                  Add Book
+                </div>
+              </button>
+            </a>
+        <div class="card-box">
+            <% record.map((val, i)=>{
+                const {id, name, description, price, author} = val;   
+            %>
+            <div class="card">
+                <div class="circle" style="--clr: #fd7015">
+                  <div class="text">
+                    <h4 style="color:white; font-size: 24px;">
+                        <%= name %>
+                    </h4>
+                  </div>
+                </div>
+                <div class="content">
+                  <h2>
+                    <%= name %>
+                  </h2>
+                  <p>
+                    <%= description %>
+                  </p>
+                  <p>
+                    - <%= author %>
+                  </p>
+                  <div style="color: White; font-size: 35px;">
+                    <span style="color: White; font-size: 18px; margin-right: 5px;">Rs.</span>
+                    <%= price %>
+                </div>
+                <button class="action">
+                  <a href="/deleteRecord?deleteId=<%= id %>" class="actionMini"><span>Delete</span></a> 
+                </button>
+                <button class="action" style="left : 50%">
+                  <a href="/editRecord?id=<%= id %>" class="actionMini" style="padding: 10px 35px;"><span>Edit</span></a> 
+                </button>
+                </div>
+                <img
+                  src="https://d1yei2z3i6k35z.cloudfront.net/505757/63fa590e96084_5x8inch-2.png"
+                  class="product_img"
+                />
+              </div>
+              <% }) %>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
