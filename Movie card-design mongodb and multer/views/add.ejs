@@ -1,0 +1,170 @@
+<html>
+
+<head>
+  <title>MOVIE VERSE</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+</head>
+<style>
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid red; */
+  }
+
+  body {
+    background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/ce449112-3294-449a-b8d3-c4e1fdd7cff5/web/IN-en-20241202-TRIFECTA-perspective_0acfb303-6291-4ad1-806f-dda785f6295a_large.jpg');
+  }
+
+  h2 {
+    position: absolute;
+    top: 12%;
+    font-size: 45px;
+    color: #FFFFFF;
+  }
+
+  form {
+    /* COLORS */
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+    /* END COLORS*/
+    width: 30%;
+    max-width: 1000px;
+    margin: auto;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
+    padding-left: 3rem;
+  }
+
+  label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    height: 3em;
+    background: #FFFFFF;
+    border: 1px solid #FF9900;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(255, 153, 0, 0.25);
+    border-radius: 10px;
+    padding: 1.25em 1em;
+  }
+
+  textarea {
+    height: 100%;
+    resize: none;
+    background: #FFFFFF;
+    border: 1px solid #FF9900;
+    box-shadow: 0px 4px 4px rgba(255, 153, 0, 0.46);
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  input,
+  textarea {
+    outline: none;
+    margin-top: 0.5em;
+    font-size: 1em;
+  }
+
+  input:focus,
+  textarea:focus {
+    background-color: rgba(255, 153, 0, 0.1);
+  }
+
+  .button {
+    background: rgba(255, 153, 0, 0.84);
+    border: 1px solid #FF9900;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px rgba(255, 153, 0, 0.25);
+    border-radius: 10px;
+    color: white;
+    padding: 10px 10px;
+    outline: none;
+    font-family: inherit;
+    font-size: 16px;
+    width: 45%;
+    margin: 0px 10px;
+  }
+
+  .button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    margin-left: 30px;
+    width: 80%;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    width: 100%;
+  }
+
+  /* INPUT DIVS */
+  .name-container,
+  .email-container,
+  .phone-container {
+    margin-bottom: 30px;
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <h2>Add Movie</h2>
+    <form action="/insert" enctype="multipart/form-data" method="post" class="orange-form">
+      <div class="input-container">
+        <div class="name-container">
+          <label for="name">Movie Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter Name">
+        </div>
+        <div class="email-container">
+          <label>Description</label>
+          <input type="text" id="price" name="desc" placeholder="Enter  Description">
+        </div>
+        <div class="email-container">
+          <label>Price</label>
+          <input type="text" id="price" name="price" placeholder="Enter  Price">
+        </div>
+        <div class="phone-container">
+          <label for="phone">image</label>
+          <input style="padding: 10px 1em;" type="file" id="author" name="image" placeholder="Enter Author Name">
+        </div>
+        <div class="button-container" style="display: flex;">
+          <button class="button" type="submit" name="submit">Submit</button>
+          <a class="button" href="/views" style="text-decoration: none; text-align: center;">view</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
